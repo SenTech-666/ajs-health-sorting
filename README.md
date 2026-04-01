@@ -1,6 +1,6 @@
 # Unit Testing — Домашнее задание Нетологии
 
-[![CI](https://github.com/ВАШ_НИК/ИМЯ_РЕПО/actions/workflows/ci.yml/badge.svg)](https://github.com/ВАШ_НИК/ИМЯ_РЕПО/actions/workflows/ci.yml)
+[![CI](https://github.com/SenTech-666/ajs-health-sorting/actions/workflows/ci.yml/badge.svg)](https://github.com/SenTech-666/ajs-health-sorting/actions/workflows/ci.yml)
 
 ## Описание
 
