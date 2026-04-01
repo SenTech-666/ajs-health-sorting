@@ -1,8 +1,9 @@
 import globals from "globals";
-import pluginJs from "@eslint/js";
+import js from "@eslint/js";
 import jestPlugin from "eslint-plugin-jest";
 
 export default [
+  js.configs.recommended,
   {
     files: ["**/*.js"],
     languageOptions: {
@@ -12,21 +13,22 @@ export default [
         ...globals.es2021,
       },
       sourceType: "module",
-    },
-    plugins: {
-      jest: jestPlugin,
+      ecmaVersion: "latest",
     },
     rules: {
-      ...pluginJs.configs.recommended.rules,
       "no-unused-vars": "warn",
-      "jest/no-disabled-tests": "warn",
-      "jest/no-focused-tests": "error",
-      "jest/no-identical-title": "error",
+      "no-console": "off",
+      "no-undef": "error",
+      "semi": ["error", "always"],
+      "quotes": ["error", "single"],
+      "indent": ["error", 2],
     },
   },
   {
-    // Конфиг специально для тестов
     files: ["**/*.test.js", "**/__tests__/**/*.js"],
+    plugins: {
+      jest: jestPlugin,
+    },
     languageOptions: {
       globals: {
         ...globals.jest,
@@ -38,7 +40,6 @@ export default [
     },
   },
   {
-    // Игнорируемые папки
-    ignores: ["dist/", "coverage/", "node_modules/", "*.config.js"],
+    ignores: ["dist/", "coverage/", "node_modules/", "webpack.config.js", "*.config.js"],
   },
 ];
